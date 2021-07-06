@@ -45,6 +45,8 @@ func bar(w http.ResponseWriter, req *http.Request) {
 }
 
 func signup(w http.ResponseWriter, req *http.Request) {
+	//این هم بخشی از ثبت نام هست تا جلوگیری بشه 
+	//اگر از قبل ثبت نام شده باشه دیگه نیاز نیست که دیگه ثبت نام کنه
 	if alreadyLoggedIn(req) {
 		http.Redirect(w, req, "/", http.StatusSeeOther)
 		return
