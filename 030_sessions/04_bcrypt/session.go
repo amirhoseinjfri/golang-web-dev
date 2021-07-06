@@ -31,6 +31,8 @@ func alreadyLoggedIn(req *http.Request) bool {
 	if err != nil {
 		return false
 	}
+	//در دیتابیس چک میکنه ببینه با این سشن ایا یوزری هست یا نه
+	// اگر بود ترو یا فالس برمیگردونه
 	un := dbSessions[c.Value]
 	_, ok := dbUsers[un]
 	return ok
